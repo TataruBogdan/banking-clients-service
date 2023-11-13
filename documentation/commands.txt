@@ -1,0 +1,12 @@
+psql -h localhost -p 54321 -U-U admin -d bank_db
+
+table individual:
+	- id
+	- first_name
+	- last_name
+	- address
+	- birth_date
+	- cnp
+	- employer
+	- occupation
+
