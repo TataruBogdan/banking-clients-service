@@ -1,4 +1,4 @@
-psql -h localhost -p 54321 -U-U admin -d bank_db
+psql -h localhost -p 54321 -U admin -d bank_db
 
 table individual:
 	- id
@@ -9,4 +9,3 @@ table individual:
 	- cnp
 	- employer
 	- occupation
-
