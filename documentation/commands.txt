@@ -1,3 +1,6 @@
+git
+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
+
 psql -h localhost -p 54321 -U admin -d bank_db
 
 table individual:
@@ -9,3 +12,5 @@ table individual:
 	- cnp
 	- employer
 	- occupation
+
+-- added map-struct - mapper to convert Data Transfer Objects (DTOs) to entities and vice versa
