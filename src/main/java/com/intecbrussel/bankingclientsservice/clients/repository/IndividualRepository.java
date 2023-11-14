@@ -1,4 +1,4 @@
-package com.intecbrussel.bankingclientsservice.clients.dao;
+package com.intecbrussel.bankingclientsservice.clients.repository;
 
 import com.intecbrussel.bankingclientsservice.clients.model.Individual;
 import org.springframework.data.jpa.repository.JpaRepository;

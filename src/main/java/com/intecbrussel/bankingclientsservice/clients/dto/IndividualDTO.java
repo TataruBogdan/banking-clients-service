@@ -29,4 +29,33 @@ public class IndividualDTO {
     private String employerName;
     private String occupation;
 
+    public void updateWith(IndividualDTO other) {
+        if (other.firstName != null){
+            this.setFirstName(other.getFirstName());
+        }
+        if (other.lastName != null) {
+            this.setLastName(other.getLastName());
+        }
+        if (other.address != null) {
+            this.setAddress(other.getAddress());
+        }
+        if (other.birthDate != null) {
+            this.setBirthDate(other.getBirthDate());
+        }
+        if (other.phoneNumber != null) {
+            this.setPhoneNumber(other.getPhoneNumber());
+        }
+        if (other.emailAddress != null) {
+            this.setEmailAddress(other.getEmailAddress());
+        }
+        if (other.rrn != null) {
+            this.setRrn(other.getRrn());
+        }
+        if (other.emailAddress != null) {
+            this.setEmployerName(other.getEmployerName());
+        }
+        if (other.occupation != null) {
+            this.setOccupation(other.getOccupation());
+        }
+    }
 }
