@@ -31,6 +31,9 @@ public class IndividualDTO {
 
 
     public void updateWith(IndividualDTO other) {
+        if (other.id != null) {
+            this.setId(other.getId());
+        }
         if (other.firstName != null){
             this.setFirstName(other.getFirstName());
         }

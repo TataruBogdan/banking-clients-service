@@ -79,13 +79,21 @@ public class IndividualServiceImpl implements IndividualService {
 
     @Override
     public Optional<IndividualDTO> update(int id, IndividualDTO individualDTO) {
-        Optional<Individual> individualRepositoryById = individualRepository.findById(id);
-        if (individualRepositoryById.isPresent()) {
-            IndividualDTO individualMapperDTO = individualMapper.toDTO(individualRepositoryById.get());
-            individualMapperDTO.updateWith(individualDTO);
-            return Optional.of(individualMapperDTO);
-        }
+//        Optional<Individual> updatedIndividual = individualRepository
+//                .findById(id)
+//                .map(individual -> individualMapper.toIndividual(individualDTO));
+//        if (updatedIndividual.isPresent()) {
+//            // Set the ID to the existing ID
+//            updatedIndividual.get().setId(id);
+//            individualRepository.save(updatedIndividual.get());
+//
+//            IndividualDTO updatedIndividualDTO = individualMapper.toDTO(updatedIndividual.get());
+//            return Optional.of(updatedIndividualDTO);
+//        }
+        Individual individual = individualMapper.toIndividual(individualDTO);
+        individual.setId(id);
+        individualRepository.save(individual);
 
-        return Optional.empty();
+        return Optional.ofNullable(individualMapper.toDTO(individual));
     }
 }

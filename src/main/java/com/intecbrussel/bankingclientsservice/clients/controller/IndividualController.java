@@ -53,10 +53,10 @@ public class IndividualController {
         }
     }
 
-    @PatchMapping("/individuals/update")
+    @PatchMapping("/individuals/update/{id}")
     public ResponseEntity<IndividualDTO> updateIndividual(@PathVariable @Valid int id, @RequestBody @Validated IndividualDTO individualDTO) {
 
-        Optional<IndividualDTO> updatedIndividual = individualService.getById(individualDTO.getId());
+        Optional<IndividualDTO> updatedIndividual = individualService.getById(id);
 
         if (updatedIndividual.isPresent()) {
             individualService.update(id, individualDTO);
