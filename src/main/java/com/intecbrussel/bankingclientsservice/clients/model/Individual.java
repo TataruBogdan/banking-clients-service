@@ -5,6 +5,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import org.hibernate.validator.constraints.UniqueElements;
 
 import java.util.Date;
 import java.util.Objects;
@@ -19,26 +20,32 @@ public class Individual {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", unique = true)
+    @Column(name = "id")
     private Integer id;
-    @Column
+    @Column(name = "first_name")
     private String firstName;
-    @Column
+    @Column(name = " last_name")
     private String lastName;
-    @Column
+    @Column(name = "address")
     private String address;
     @Column(name = "birth_date")
     private Date birthDate;
     @Column(name = "phone_number")
     private String phoneNumber;
-    @Column(name = "email_address")
+    @Column(name = "email_address", unique = true, nullable = false)
     private String emailAddress;
-    @Column
+    @Column(name = "rrn")
     private String rrn;
-    @Column(name = "employer_name")
+    @Column(name = "employer_name", unique = true, nullable = false)
     private String employerName;
-    @Column
+    @Column(name = "occupation")
     private String occupation;
+
+
+    //Modify the getId() method to handel null
+//    public int getId() {
+//        return id != null ? id : 1; // default value is 1
+//    }
 
     @Override
     public boolean equals(Object o) {

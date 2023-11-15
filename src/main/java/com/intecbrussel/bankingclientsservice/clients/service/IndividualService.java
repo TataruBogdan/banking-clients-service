@@ -10,6 +10,8 @@ public interface IndividualService {
     List<IndividualDTO> getAll();
     Optional<IndividualDTO> getById(int id);
 
+    Optional<IndividualDTO> getByEmailAddress(String name);
+
     void deleteById(int id);
 
     void save(IndividualDTO individualDTO);

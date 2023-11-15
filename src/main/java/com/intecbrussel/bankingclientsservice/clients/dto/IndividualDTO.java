@@ -11,7 +11,6 @@ import java.util.Date;
 @Data
 public class IndividualDTO {
 
-    @NotNull
     private Integer id;
     @NotNull
     private String firstName;
@@ -28,6 +27,8 @@ public class IndividualDTO {
     private String rrn;
     private String employerName;
     private String occupation;
+
+
 
     public void updateWith(IndividualDTO other) {
         if (other.firstName != null){

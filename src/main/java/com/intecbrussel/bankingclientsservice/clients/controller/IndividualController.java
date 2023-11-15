@@ -3,7 +3,6 @@ package com.intecbrussel.bankingclientsservice.clients.controller;
 import com.intecbrussel.bankingclientsservice.clients.dto.IndividualDTO;
 import com.intecbrussel.bankingclientsservice.clients.service.IndividualService;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Response;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
@@ -43,16 +42,18 @@ public class IndividualController {
 
     @PostMapping("/individuals/create")
     public ResponseEntity<IndividualDTO> create(@Valid @RequestBody IndividualDTO individualDTO) {
-        Optional<IndividualDTO> foundIndividual = individualService.getById(individualDTO.getId());
+        Optional<IndividualDTO> foundIndividual = individualService.getByEmailAddress(individualDTO.getEmailAddress());
 
         if (foundIndividual.isPresent()) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(individualDTO);
         } else {
+            //individualDTO.setId(null);
             individualService.save(individualDTO);
             return ResponseEntity.status(HttpStatus.CREATED).body(individualDTO);
         }
     }
 
+    @PatchMapping("/individuals/update")
     public ResponseEntity<IndividualDTO> updateIndividual(@PathVariable @Valid int id, @RequestBody @Validated IndividualDTO individualDTO) {
 
         Optional<IndividualDTO> updatedIndividual = individualService.getById(individualDTO.getId());

@@ -40,6 +40,31 @@ public class IndividualServiceImpl implements IndividualService {
     }
 
     @Override
+    public Optional<IndividualDTO> getByEmailAddress(String name) {
+        Optional<Individual> individualByName = individualRepository.findByEmailAddress(name);
+        return individualByName.map(this::convert);
+    }
+
+    private IndividualDTO convert (Individual individual) {
+
+        IndividualDTO individualDTO = new IndividualDTO();
+
+        individualDTO.setId(individual.getId());
+        individualDTO.setFirstName(individual.getFirstName());
+        individualDTO.setLastName(individual.getLastName());
+        individualDTO.setAddress(individual.getAddress());
+        individualDTO.setBirthDate(individual.getBirthDate());
+        individualDTO.setPhoneNumber(individual.getPhoneNumber());
+        individualDTO.setEmailAddress(individual.getEmailAddress());
+        individualDTO.setRrn(individual.getRrn());
+        individualDTO.setEmployerName(individual.getEmployerName());
+        individualDTO.setOccupation(individual.getOccupation());
+
+        return individualDTO;
+    }
+
+
+    @Override
     public void deleteById(int id) {
         individualRepository.deleteById(id);
     }
