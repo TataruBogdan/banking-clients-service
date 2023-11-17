@@ -1,7 +1,7 @@
 package com.intecbrussel.bankingclientsservice.clients.controller;
 
-import com.intecbrussel.bankingclientsservice.clients.dto.IndividualDTO;
 import com.intecbrussel.bankingclientsservice.clients.service.IndividualService;
+import com.intecbrussel.commonsservice.dto.IndividualDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

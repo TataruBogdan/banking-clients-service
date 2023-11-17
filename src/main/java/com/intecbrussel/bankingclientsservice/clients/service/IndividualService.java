@@ -1,6 +1,8 @@
 package com.intecbrussel.bankingclientsservice.clients.service;
 
-import com.intecbrussel.bankingclientsservice.clients.dto.IndividualDTO;
+
+
+import com.intecbrussel.commonsservice.dto.IndividualDTO;
 
 import java.util.List;
 import java.util.Optional;

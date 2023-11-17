@@ -1,10 +1,11 @@
 package com.intecbrussel.bankingclientsservice.clients.service.impl;
 
-import com.intecbrussel.bankingclientsservice.clients.dto.IndividualDTO;
+
 import com.intecbrussel.bankingclientsservice.clients.model.Individual;
 import com.intecbrussel.bankingclientsservice.clients.repository.IndividualRepository;
 import com.intecbrussel.bankingclientsservice.clients.service.IndividualMapper;
 import com.intecbrussel.bankingclientsservice.clients.service.IndividualService;
+import com.intecbrussel.commonsservice.dto.IndividualDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
