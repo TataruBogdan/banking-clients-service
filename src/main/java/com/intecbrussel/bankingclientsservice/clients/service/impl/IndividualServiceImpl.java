@@ -2,6 +2,7 @@ package com.intecbrussel.bankingclientsservice.clients.service.impl;
 
 
 import com.intecbrussel.bankingclientsservice.clients.model.Individual;
+
 import com.intecbrussel.bankingclientsservice.clients.repository.IndividualRepository;
 import com.intecbrussel.bankingclientsservice.clients.service.IndividualMapper;
 import com.intecbrussel.bankingclientsservice.clients.service.IndividualService;
