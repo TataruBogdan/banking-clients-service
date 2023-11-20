@@ -3,6 +3,7 @@ package com.intecbrussel.bankingclientsservice.clients.service;
 
 
 import com.intecbrussel.bankingclientsservice.clients.model.Individual;
+
 import com.intecbrussel.commonsservice.dto.IndividualDTO;
 import org.mapstruct.Mapper;
 
