@@ -1,5 +1,4 @@
-git
-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
+
 
 psql -h localhost -p 54321 -U admin -d bank_db
 
