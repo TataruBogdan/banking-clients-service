@@ -9,6 +9,7 @@ import com.intecbrussel.bankingclientsservice.clients.service.IndividualService;
 
 import com.intecbrussel.commonsservice.dto.IndividualDTO;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -19,8 +20,9 @@ import java.util.stream.Collectors;
 @RequiredArgsConstructor
 public class IndividualServiceImpl implements IndividualService {
 
+    @Autowired
     private final IndividualRepository individualRepository;
-
+    @Autowired
     private final IndividualMapper individualMapper;
     @Override
     public List<IndividualDTO> getAll() {
